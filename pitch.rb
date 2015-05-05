@@ -1,5 +1,4 @@
 class Pitch
-
   attr_accessor :note, :octave
 
   def initialize(note, octave)
@@ -7,41 +6,36 @@ class Pitch
     @octave = octave
   end
 
-  # return the number of semitones away from A4
-  def semitones
-    notes = {B:   2,
-             Bf:  1,
-             As:  1,
-             A:   0,
-             Af: -1,
-             Gs: -1,
-             G:  -2,
-             Gf: -3,
-             Fs: -3,
-             F:  -4,
-             E:  -5,
-             Ef: -6,
-             Ds: -6,
-             D:  -7,
-             Df: -8,
-             Cs: -8,
-             C:  -9}
-
-    octave_diff = @octave - 4
-    octave_diff * 12 + notes[@note]
-  end
-
+  # Formula to derive note frequencies of the equal tempered scale
+  # http://www.phy.mtu.edu/~suits/NoteFreqCalcs.html
   def frequency
-    # f(n) = f0 * (a)**n where a = 2**(1.0/12)
-    a = 2**(1.0/12)
-    n = self.semitones
-    frequency = 440 * a**n
+    growth_rate = 2 ** (1.0 / 12)
+    frequency = 440 * (growth_rate ** semitones_from_A4)
     frequency.round(3)
   end
+
+  private
+
+  NOTE_TO_SEMITONE_OFFSET_MAP = {B:   2,
+                                 Bf:  1,
+                                 As:  1,
+                                 A:   0,
+                                 Af: -1,
+                                 Gs: -1,
+                                 G:  -2,
+                                 Gf: -3,
+                                 Fs: -3,
+                                 F:  -4,
+                                 E:  -5,
+                                 Ef: -6,
+                                 Ds: -6,
+                                 D:  -7,
+                                 Df: -8,
+                                 Cs: -8,
+                                 C:  -9}
+
+  def semitones_from_A4
+    octave_diff = @octave - 4
+    (octave_diff * 12) + NOTE_TO_SEMITONE_OFFSET_MAP[@note]
+  end
 end
-
-# b = Pitch.new :Ds, 2
-# puts b.semitones
-
-# c = Pitch.new :Gf, 5
-# puts c.semitones
