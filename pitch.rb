@@ -40,14 +40,8 @@ class Pitch
   end
 end
 
+# b = Pitch.new :Ds, 2
+# puts b.semitones
 
-# note_1 = Pitch.new :D,  4
-# note_2 = Pitch.new :A,  6
-
-# puts note_1.note, note_1.octave
-# puts note_1.semitones
-# puts note_1.frequency
-# puts
-# puts note_2.note, note_2.octave
-# puts note_2.semitones
-# puts note_2.frequency
+# c = Pitch.new :Gf, 5
+# puts c.semitones
