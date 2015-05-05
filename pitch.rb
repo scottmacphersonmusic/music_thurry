@@ -1,5 +1,3 @@
-# require music_theory
-
 class Pitch
 
   attr_accessor :note, :octave
@@ -43,13 +41,13 @@ class Pitch
 end
 
 
-note_1 = Pitch.new :D,  4
-note_2 = Pitch.new :A,  6
+# note_1 = Pitch.new :D,  4
+# note_2 = Pitch.new :A,  6
 
-puts note_1.note, note_1.octave
-puts note_1.semitones
-puts note_1.frequency
-puts
-puts note_2.note, note_2.octave
-puts note_2.semitones
-puts note_2.frequency
+# puts note_1.note, note_1.octave
+# puts note_1.semitones
+# puts note_1.frequency
+# puts
+# puts note_2.note, note_2.octave
+# puts note_2.semitones
+# puts note_2.frequency
