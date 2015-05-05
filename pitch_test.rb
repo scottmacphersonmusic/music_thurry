@@ -3,9 +3,9 @@ require './pitch'
 
 class TestPitch < MiniTest::Test
   def setup
-    @A4  = Pitch.new :A,  4
-    @Ds2 = Pitch.new :Ds, 2
-    @Gf5 = Pitch.new :Gf, 5
+    @A4  = Pitch.new :a,   4
+    @Ds2 = Pitch.new 'dS', 2
+    @Gf5 = Pitch.new :Gf,  5
   end
 
   def test_frequency

@@ -2,7 +2,7 @@ class Pitch
   attr_accessor :note, :octave
 
   def initialize(note, octave)
-    @note   = note
+    @note   = prepare_note_for_offset_map(note)
     @octave = octave
   end
 
@@ -53,5 +53,15 @@ class Pitch
     else
       note
     end
+  end
+
+  def prepare_note_for_offset_map(note)
+    letter = note[0].upcase
+    accidental = if note[1] then
+                   note[1].downcase
+                 else
+                   ""
+                 end
+    "#{letter}#{accidental}".to_sym
   end
 end
