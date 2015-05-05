@@ -13,4 +13,10 @@ class TestPitch < MiniTest::Test
     assert_equal @Ds2.frequency, 77.782
     assert_equal @Gf5.frequency, 739.989
   end
+
+  def test_to_s
+    assert_equal @A4.to_s,  "A 4"
+    assert_equal @Ds2.to_s, "D# 2"
+    assert_equal @Gf5.to_s, "Gb 5"
+  end
 end

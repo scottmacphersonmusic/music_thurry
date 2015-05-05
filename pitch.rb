@@ -14,6 +14,12 @@ class Pitch
     frequency.round(3)
   end
 
+  def to_s
+    note   = replace_sharp_or_flat(@note.to_s)
+    octave = @octave.to_s
+    return "#{note} #{octave}"
+  end
+
   private
 
   NOTE_TO_SEMITONE_OFFSET_MAP = {B:   2,
@@ -37,5 +43,15 @@ class Pitch
   def semitones_from_A4
     octave_diff = @octave - 4
     (octave_diff * 12) + NOTE_TO_SEMITONE_OFFSET_MAP[@note]
+  end
+
+  def replace_sharp_or_flat(note)
+    if note[1] == "s"
+      note[0] + "#"
+    elsif note[1] == "f"
+      note[0] + "b"
+    else
+      note
+    end
   end
 end
