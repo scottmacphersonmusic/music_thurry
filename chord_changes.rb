@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'music_theory'
 require_relative 'pitch'
 
