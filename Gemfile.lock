@@ -1,0 +1,17 @@
+GIT
+  remote: https://github.com/scottmacphersonmusic/music_theory.git
+  revision: 4b5a2b7c7177121e2096af7a1ed9f8a71d975efb
+  specs:
+    music_theory (0.3.2)
+      wavefile
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    wavefile (0.6.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  music_theory!
