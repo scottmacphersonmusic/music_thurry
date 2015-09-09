@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/scottmacphersonmusic/music_theory.git
-  revision: 4b5a2b7c7177121e2096af7a1ed9f8a71d975efb
+  revision: 2a0107d41c791e2ec12e3b3c1209db22834415e4
   specs:
     music_theory (0.3.2)
       wavefile
@@ -15,3 +15,7 @@ PLATFORMS
 
 DEPENDENCIES
   music_theory!
+  wavefile
+
+BUNDLED WITH
+   1.10.6
